@@ -1,0 +1,20 @@
+{
+  "name": "projet3",
+  "version": "1.0.0",
+  "description": "site web ohmyfood",
+  "main": "index.js",
+
+  "scripts": {
+    "sass": "sass ./sass/main.scss:./public/css/style.css --watch --no-source-map --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotusbleu54/OC_Projet3.git"
+  },
+  "author": "DM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lotusbleu54/OC_Projet3/issues"
+  },
+  "homepage": "https://github.com/lotusbleu54/OC_Projet3#readme"
+}
