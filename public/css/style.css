@@ -1,136 +1,90 @@
-.nav {
-  padding-right: 6rem;
-  flex: 2 1 auto;
-  text-align: right;
-}
-.nav__link {
-  display: inline;
-  font-size: 3rem;
-  padding-left: 1.5rem;
-}
 .nav__link a {
   text-decoration: none;
-  color: #D6FFF5;
+  color: #FDCB46;
 }
 .nav__link--active {
-  color: #001534;
+  color: #FDCB46;
 }
 .nav__link--active:hover {
   cursor: default;
-  color: #001534;
+  color: #FDCB46;
 }
 .nav__link a:hover {
-  color: #fff;
+  color: #eee;
 }
 
 .header {
-  background: #15DEA5;
-  height: 10rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  background: #579C87;
+  height: 7rem;
   width: 100%;
 }
 .header__logo {
-  font-size: 7rem;
-  color: #001534;
-  margin-left: 10rem;
-  text-shadow: 0.55rem 0.55rem #fff;
+  font-size: 3rem;
+  color: #FDCB46;
+  text-align: center;
 }
 
-.form {
+.footer {
+  background: #579C87;
+  height: 7rem;
   width: 100%;
-  padding-bottom: 1.5rem;
+  /* position:fixed;
+   bottom:0;*/
 }
-.form__heading {
-  width: 100%;
-  color: #fff;
-  text-shadow: 0.55rem 0.55rem #11af82;
-  background: #15DEA5;
-  line-height: 5rem;
-  padding: 1.5rem;
-}
-.form__field label {
-  color: #D6FFF5;
-  display: block;
+.footer__logo {
   font-size: 2rem;
-  line-height: 2rem;
-  padding-top: 1.5rem;
-}
-.form__field input {
-  width: 100%;
-  background: #001534;
-  border: 0.1rem solid #15DEA5;
-  padding: 1.5rem;
-  color: #D6FFF5;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 2.75rem;
-}
-.form__field input:focus {
-  background: #15DEA5;
-  color: #fff;
-}
-.form__field textarea {
-  width: 100%;
-  color: #15DEA5;
-  background: #001534;
-  border: 0.1rem solid #15DEA5;
-  outline: none;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.form__field textarea:active, .form__field textarea:focus {
-  color: #D6FFF5;
+  color: #FDCB46;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
 }
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+.btn {
+  background: #579C87;
+  height: 3rem;
+  width: 30%;
+  margin: auto;
+  font-size: 1.5rem;
+  color: #FDCB46;
+  text-align: center;
+  border-radius: 15px;
 }
 
+/*Ajout de la police Montserrat*/
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("fonts/Poppins-Bold.otf") format("opentype");
+}
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 body {
-  box-sizing: border-box;
-  background: #001534;
+  max-width: 1200px;
+  margin: auto;
+  background: #eee;
+  position: relative;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  color: #15DEA5;
-  font-size: 2rem;
-  font-weight: 100;
+  font-family: "Poppins Bold", sans-serif;
+  color: #579C87;
   line-height: 1.7;
 }
 
 h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 5rem;
-  font-style: italic;
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 2rem;
 }
 
 textarea {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins Bold", sans-serif;
   font-weight: 100;
   font-size: 2rem;
 }
 
 button {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  font-family: "Poppins Bold", sans-serif;
   font-style: italic;
   font-size: 2.75rem;
-}
-
-.container {
-  margin: 6rem;
-  padding: 1.5rem 1.5rem 0 1.5rem;
-  border: 0.1rem solid #D6FFF5;
 }

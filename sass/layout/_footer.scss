@@ -1,0 +1,14 @@
+.footer {
+    background: $colour-primary;
+    height: 7rem;
+    width: 100%;
+   /* position:fixed;
+    bottom:0;*/
+    &__logo {
+        font-size: 2rem;
+        color: $colour-secondary;
+        list-style-type: none;
+        display:flex;
+        justify-content: space-between;
+    }
+}

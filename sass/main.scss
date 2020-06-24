@@ -3,58 +3,48 @@
 @import "utils/mixins";
 @import "layout/nav";
 @import "layout/header";
-@import "layout/form";
+@import "layout/footer";
+@import "layout/btn";
 
-*,
-*::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+/*Ajout de la police Montserrat*/
+@font-face
+{
+  font-family: 'Poppins Bold';
+  src: url('fonts/Poppins-Bold.otf') format('opentype');
 }
 
 html {
-    // 10px div by def of 16px
-    font-size: 62.5%;
+    font-size: 100%;
 }
 
 body {
-    box-sizing: border-box;
-    background: $colour-secondary;
+    max-width: 1200px;
+    margin:auto;
+    background: $colour-white;
+    position: relative;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins Bold', sans-serif;
     color: $colour-primary;
-    font-size: 2rem;
-    font-weight: 100;
     line-height: 1.7;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 5rem;
-    font-style: italic;
+    font-family: 'Poppins Bold', sans-serif;
+    font-size: 2rem;
 }
 
 textarea {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins Bold', sans-serif;
     font-weight: 100;
     font-size: 2rem;
 }
 
 button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
+    font-family: 'Poppins Bold', sans-serif;
     font-style: italic;
     font-size: 2.75rem;
-}
-
-.container {
-    margin: $layout-margin;
-    padding: $grid-gutter $grid-gutter 0 $grid-gutter;
-    @include border($colour-accent);
 }
 
 
