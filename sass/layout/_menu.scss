@@ -1,0 +1,140 @@
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu
+{   
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 5px 5px 10px grey;
+    table {text-align:left;
+    width:80%;
+    margin:auto;
+    }
+    ul {
+        width:80%;
+        text-align:left;
+        margin:auto;
+        padding-left:0;
+        padding: 2px 2px 40px 2px;
+    }
+    &__1 {
+        background-color:map-get($colour-menu1,"back");
+        font-family: 'Devonshire', sans-serif;
+        color:map-get($colour-menu1,"font");
+    };
+    &__2 {
+        background-color:map-get($colour-menu2,"back");
+        font-family: 'CroissantOne', sans-serif;
+
+        background: linear-gradient(to bottom, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
+        background-image: linear-gradient(to bottom, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        h2:nth-child(1) {
+            background: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
+            background-image: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2:nth-child(2) {
+            background: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-start"));
+            background-image: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-start"));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;}
+
+    };
+    &__3 {
+        background-color:map-get($colour-menu3,"back");
+        font-family: 'GreatVibes', sans-serif;
+
+        h2:nth-child(1) {
+            background: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
+            background-image: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2:nth-child(2) {
+            background: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-start"));
+            background-image: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-start"));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;}
+    };
+    &__4 {
+        background-color:map-get($colour-menu4,"back");
+        font-family: 'Kaushan', sans-serif;
+
+        h2:nth-child(1) {
+            background: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-end"));
+            background-image: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-end"));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2:nth-child(2) {
+            background: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-start"));
+            background-image: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-start"));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;}
+
+    };
+    &__main {
+        font-size: 2rem;
+        width: 40%;
+        @include mobile-only{width: 90%;
+        font-size: 1.5rem;}
+        height: 400px;
+        margin:20px;
+        &.menu__3 >h2:nth-child(2) {
+            font-family: 'worstveld', sans-serif;
+            font-size: 4rem;}
+        &.menu__4 >h2:nth-child(2) {
+            font-family: 'worstveld', sans-serif;
+            font-size: 4rem;}
+    }
+    &__sec {
+        h2:nth-child(1) {font-size:3rem;
+            @include mobile-only{font-size: 1.8rem;}}
+        font-size: 1.4rem;
+        @include mobile-only{font-size: 0.8rem;}
+        width:85%;
+        height:auto;
+        margin:auto;
+        padding-top: 20px;
+        padding-bottom:20px;
+        margin-bottom:10rem;
+    }
+    &__end {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:20px;
+        .fas.fa-music {padding-right:10px;
+                font-size: 2.5rem;}
+        h2 {padding-left: 10px;
+            margin-bottom:0;
+        }
+    }
+}
+
+.fas.fa-music
+{
+    background: linear-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
+    background-image: linear-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:4rem;
+    margin-bottom: 0;
+}
+
+.fas.fa-music + h2 {
+    margin-top:0;
+    font-size:3rem;
+    @include mobile-only{font-size: 1.8rem;}
+}

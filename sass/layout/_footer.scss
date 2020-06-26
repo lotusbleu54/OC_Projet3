@@ -1,14 +1,25 @@
+footer {
+    width: 100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+}
+
 .footer {
     background: $colour-primary;
-    height: 7rem;
-    width: 100%;
-   /* position:fixed;
-    bottom:0;*/
+    height: 6rem;
+    margin:auto;
+    max-width: 1000px;
+
     &__logo {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        @include mobile-only{font-size: 1rem;}
         color: $colour-secondary;
-        list-style-type: none;
         display:flex;
         justify-content: space-between;
+        padding-top:20px;
+        padding-left:40px;
+        padding-right:40px;
+        font-family: 'Poppins-Regular', sans-serif;
     }
 }

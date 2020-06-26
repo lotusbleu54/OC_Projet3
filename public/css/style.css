@@ -15,76 +15,278 @@
 
 .header {
   background: #579C87;
-  height: 7rem;
+  height: 6rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 .header__logo {
   font-size: 3rem;
   color: #FDCB46;
   text-align: center;
+  font-family: "Poppins_Bold", sans-serif;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .footer {
   background: #579C87;
-  height: 7rem;
-  width: 100%;
-  /* position:fixed;
-   bottom:0;*/
+  height: 6rem;
+  margin: auto;
+  max-width: 1000px;
 }
 .footer__logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #FDCB46;
-  list-style-type: none;
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: "Poppins-Regular", sans-serif;
+}
+@media screen and (max-width: 599px) {
+  .footer__logo {
+    font-size: 1rem;
+  }
 }
 
 .btn {
   background: #579C87;
   height: 3rem;
-  width: 30%;
+  width: 40%;
   margin: auto;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: "Poppins-Regular", sans-serif;
   color: #FDCB46;
   text-align: center;
   border-radius: 15px;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 599px) {
+  .btn {
+    width: 60%;
+    font-size: 1.3rem;
+  }
 }
 
-/*Ajout de la police Montserrat*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px grey;
+}
+.menu table {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+.menu ul {
+  width: 80%;
+  text-align: left;
+  margin: auto;
+  padding-left: 0;
+  padding: 2px 2px 40px 2px;
+}
+.menu__1 {
+  background-color: #fcdfdb;
+  font-family: "Devonshire", sans-serif;
+  color: #3c1218;
+}
+.menu__2 {
+  background-color: #fff5fe;
+  font-family: "CroissantOne", sans-serif;
+  background: linear-gradient(to bottom, #d8852e, #8f5aff);
+  background-image: linear-gradient(to bottom, #d8852e, #8f5aff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__2 h2:nth-child(1) {
+  background: linear-gradient(to right, #d8852e, #8f5aff);
+  background-image: linear-gradient(to right, #d8852e, #8f5aff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__2 h2:nth-child(2) {
+  background: linear-gradient(to right, #d8852e, #d8852e);
+  background-image: linear-gradient(to right, #d8852e, #d8852e);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__3 {
+  background-color: #f9f9f9;
+  font-family: "GreatVibes", sans-serif;
+}
+.menu__3 h2:nth-child(1) {
+  background: linear-gradient(to right, #0431df, #0889fb);
+  background-image: linear-gradient(to right, #0431df, #0889fb);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__3 h2:nth-child(2) {
+  background: linear-gradient(to right, #0431df, #0431df);
+  background-image: linear-gradient(to right, #0431df, #0431df);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__4 {
+  background-color: #fdfffd;
+  font-family: "Kaushan", sans-serif;
+}
+.menu__4 h2:nth-child(1) {
+  background: linear-gradient(to right, #3d9339, #beff7f);
+  background-image: linear-gradient(to right, #3d9339, #beff7f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__4 h2:nth-child(2) {
+  background: linear-gradient(to right, #3d9339, #3d9339);
+  background-image: linear-gradient(to right, #3d9339, #3d9339);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__main {
+  font-size: 2rem;
+  width: 40%;
+  height: 400px;
+  margin: 20px;
+}
+@media screen and (max-width: 599px) {
+  .menu__main {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+}
+.menu__main.menu__3 > h2:nth-child(2) {
+  font-family: "worstveld", sans-serif;
+  font-size: 4rem;
+}
+.menu__main.menu__4 > h2:nth-child(2) {
+  font-family: "worstveld", sans-serif;
+  font-size: 4rem;
+}
+.menu__sec {
+  font-size: 1.4rem;
+  width: 85%;
+  height: auto;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 10rem;
+}
+.menu__sec h2:nth-child(1) {
+  font-size: 3rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__sec h2:nth-child(1) {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .menu__sec {
+    font-size: 0.8rem;
+  }
+}
+.menu__end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.menu__end .fas.fa-music {
+  padding-right: 10px;
+  font-size: 2.5rem;
+}
+.menu__end h2 {
+  padding-left: 10px;
+  margin-bottom: 0;
+}
+
+.fas.fa-music {
+  background: linear-gradient(to right, #f05862, #f6916a);
+  background-image: linear-gradient(to right, #f05862, #f6916a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.fas.fa-music + h2 {
+  margin-top: 0;
+  font-size: 3rem;
+}
+@media screen and (max-width: 599px) {
+  .fas.fa-music + h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/*Ajout de la police Poppins*/
 @font-face {
-  font-family: "Poppins Bold";
-  src: url("fonts/Poppins-Bold.otf") format("opentype");
+  font-family: "Poppins_Bold";
+  src: url(../../fonts/Poppins-Bold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Poppins_Regular";
+  src: url(../../fonts/Poppins-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Devonshire";
+  src: url(../../fonts/devonshire-regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "asimov";
+  src: url(../../fonts/asimov.otf) format("opentype");
+}
+@font-face {
+  font-family: "CroissantOne";
+  src: url(../../fonts/CroissantOne-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "GreatVibes";
+  src: url(../../fonts/GreatVibes-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "worstveld";
+  src: url(../../fonts/worstveldslingbold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Kaushan";
+  src: url(../../fonts/KaushanScript-Regular.otf) format("opentype");
 }
 html {
   font-size: 100%;
 }
 
 body {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
   background: #eee;
-  position: relative;
+  font-family: "Asimov", sans-serif;
+  color: black;
+  overflow: scroll;
+  text-align: center;
 }
 
-body {
-  font-family: "Poppins Bold", sans-serif;
-  color: #579C87;
-  line-height: 1.7;
-}
-
-h1 {
-  font-family: "Poppins Bold", sans-serif;
-  font-size: 2rem;
-}
-
-textarea {
-  font-family: "Poppins Bold", sans-serif;
-  font-weight: 100;
-  font-size: 2rem;
-}
-
-button {
-  font-family: "Poppins Bold", sans-serif;
-  font-style: italic;
-  font-size: 2.75rem;
+ul {
+  list-style-type: none;
 }

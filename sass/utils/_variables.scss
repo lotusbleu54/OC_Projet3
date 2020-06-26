@@ -4,7 +4,11 @@ $colour-secondary:#FDCB46;
 $colour-accent: #D6FFF5;
 $colour-white: #eee;
 $colour-invalid: #DB464B;
+$colour-menu1: ("back":#fcdfdb, "font":#3c1218, "music-start":#f05862, "music-end":#f6916a);
+$colour-menu2: ("back":#fff5fe, "font-start":#d8852e, "font-end":#8f5aff);
+$colour-menu3: ("back":#f9f9f9,"font-start":#0431df, "font-end":#0889fb);
+$colour-menu4:("back":#fdfffd,"font-start":#3d9339, "font-end":#beff7f);
 
-$heading-shadow-size: .55rem;
-$layout-margin: 6rem;
-$grid-gutter: $layout-margin * .25;
+
+// map
+$breakpoints: (mobile: 599px);

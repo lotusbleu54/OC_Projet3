@@ -5,47 +5,24 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/btn";
-
-/*Ajout de la police Montserrat*/
-@font-face
-{
-  font-family: 'Poppins Bold';
-  src: url('fonts/Poppins-Bold.otf') format('opentype');
-}
+@import "layout/menu";
+@import "base/fonts";
 
 html {
     font-size: 100%;
 }
 
 body {
-    max-width: 1200px;
+    max-width: 1000px;
     margin:auto;
     background: $colour-white;
-    position: relative;
+    font-family: 'Asimov', sans-serif;
+    color: black;
+    overflow: scroll;
+    text-align: center;
 }
 
-body {
-    font-family: 'Poppins Bold', sans-serif;
-    color: $colour-primary;
-    line-height: 1.7;
+ul
+{
+    list-style-type: none;
 }
-
-h1 {
-    font-family: 'Poppins Bold', sans-serif;
-    font-size: 2rem;
-}
-
-textarea {
-    font-family: 'Poppins Bold', sans-serif;
-    font-weight: 100;
-    font-size: 2rem;
-}
-
-button {
-    font-family: 'Poppins Bold', sans-serif;
-    font-style: italic;
-    font-size: 2.75rem;
-}
-
-
-
