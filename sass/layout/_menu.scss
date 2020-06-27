@@ -16,13 +16,7 @@
     width:80%;
     margin:auto;
     }
-    ul {
-        width:80%;
-        text-align:left;
-        margin:auto;
-        padding-left:0;
-        padding: 2px 2px 40px 2px;
-    }
+
     &__1 {
         background-color:map-get($colour-menu1,"back");
         font-family: 'Devonshire', sans-serif;
@@ -54,7 +48,7 @@
     &__3 {
         background-color:map-get($colour-menu3,"back");
         font-family: 'GreatVibes', sans-serif;
-
+        
         h2:nth-child(1) {
             background: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
             background-image: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
@@ -89,8 +83,11 @@
         width: 40%;
         @include mobile-only{width: 90%;
         font-size: 1.5rem;}
-        height: 400px;
+        height: 500px;
         margin:20px;
+        &.menu__1 >h2:nth-child(3) {
+            font-family: 'worstveld', sans-serif;
+            font-size: 4rem;}
         &.menu__3 >h2:nth-child(2) {
             font-family: 'worstveld', sans-serif;
             font-size: 4rem;}
@@ -99,21 +96,41 @@
             font-size: 4rem;}
     }
     &__sec {
+        h3 {
+            align-items: center;
+            display: flex;
+            text-align: center;
+            width:90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h3::before, h3::after {
+            border-top: .3rem solid;
+            content: "";
+            flex: 1;
+            margin: 1rem;
+        }
         h2:nth-child(1) {font-size:3rem;
             @include mobile-only{font-size: 1.8rem;}}
         font-size: 1.4rem;
         @include mobile-only{font-size: 0.8rem;}
+        &.menu__1 {font-size: 1.7rem;
+            @include mobile-only{font-size: 1rem;}}
+        &.menu__3 {font-size: 1.7rem;
+            @include mobile-only{font-size: 1rem;}}
         width:85%;
         height:auto;
         margin:auto;
-        padding-top: 20px;
-        padding-bottom:20px;
+        padding-top: 60px;
+        padding-bottom:60px;
         margin-bottom:10rem;
+        td:nth-of-type(2n){text-align: right;}
     }
     &__end {
         display:flex;
         justify-content: center;
         align-items: center;
+        margin-top:20px;
         margin-bottom:20px;
         .fas.fa-music {padding-right:10px;
                 font-size: 2.5rem;}
@@ -138,3 +155,19 @@
     font-size:3rem;
     @include mobile-only{font-size: 1.8rem;}
 }
+
+/*
+h3 {
+    align-items: center;
+    display: flex;
+    text-align: center;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3::before, h3::after {
+    border-top: .1rem solid;
+    content: "";
+    flex: 1;
+    margin: 1rem;
+}*/
