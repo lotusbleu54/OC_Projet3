@@ -5,7 +5,15 @@
 }
 
 @mixin text-gradient($dir, $from, $to) {
-    background: -webkit-linear-gradient($dir, $from, $to);
+    background: linear-gradient($dir, $from, $to);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  @mixin menu-border($image) {
+    border-top: 1rem solid transparent;
+    border-image: url($image) 70 stretch;
+    content: "";
+    flex: 1;
+    margin: 1rem;
   }

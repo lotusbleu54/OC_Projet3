@@ -21,63 +21,118 @@
         background-color:map-get($colour-menu1,"back");
         font-family: 'Devonshire', sans-serif;
         color:map-get($colour-menu1,"font");
+        h3::before, h3::after {
+            @include menu-border("../../images/Menu1.png");
+        }
+        i { 
+            @include text-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
+            font-size:5rem;
+            @include mobile-only{font-size: 3rem;}
+            margin-bottom: 0;
+        }
+        i + h2 {
+            margin-top:0;
+            font-size:4rem;
+            @include mobile-only{font-size: 2rem;}
+        }
+        .bas {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-top:20px;
+            margin-bottom:20px;
+            i {padding-right:10px;
+                    font-size: 4rem;
+                    @include mobile-only{font-size: 2.5rem;}}
+            h2 {padding-left: 10px;
+                margin-bottom:0;
+            }
+        }
     };
+
     &__2 {
         background-color:map-get($colour-menu2,"back");
         font-family: 'CroissantOne', sans-serif;
-
-        background: linear-gradient(to bottom, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
-        background-image: linear-gradient(to bottom, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        h2:nth-child(1) {
-            background: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
-            background-image: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        h3:nth-of-type(1)::before {
+            @include menu-border("../../images/Menu2-1.png");
         }
-
+        h3:nth-of-type(1)::after {
+            @include menu-border("../../images/Menu2-1.png");
+            transform:scaleX(-1);
+        }
+        h3:nth-of-type(2)::before {
+            @include menu-border("../../images/Menu2-2.png");
+        }
+        h3:nth-of-type(2)::after {
+            @include menu-border("../../images/Menu2-2.png");
+            transform:scaleX(-1);
+        }
+        h3:nth-of-type(3)::before {
+            @include menu-border("../../images/Menu2-3.png");
+        }
+        h3:nth-of-type(3)::after {
+            @include menu-border("../../images/Menu2-3.png");
+            transform:scaleX(-1);
+        }
+        @include text-gradient(to bottom, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
+        h2:nth-child(1) {
+            @include text-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
+                    }
         h2:nth-child(2) {
-            background: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-start"));
-            background-image: linear-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-start"));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;}
-
+            @include text-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-start"));
+        }
     };
+
     &__3 {
         background-color:map-get($colour-menu3,"back");
         font-family: 'GreatVibes', sans-serif;
-        
+        h3:nth-of-type(1)::before {
+            @include menu-border("../../images/Menu3-1.png");
+        }
+        h3:nth-of-type(1)::after {
+            @include menu-border("../../images/Menu3-1.png");
+            transform:scaleX(-1);
+        }
+        h3:nth-of-type(2)::before {
+                @include menu-border("../../images/Menu3-2.png");
+        }
+        h3:nth-of-type(2)::after {
+                @include menu-border("../../images/Menu3-2.png");
+                transform:scaleX(-1);
+        }
+        h3:nth-of-type(3)::before {
+            @include menu-border("../../images/Menu3-3.png");
+        }
+        h3:nth-of-type(3)::after {
+            @include menu-border("../../images/Menu3-3.png");
+            transform:scaleX(-1);
+        }
         h2:nth-child(1) {
-            background: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
-            background-image: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @include text-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
         }
         h2:nth-child(2) {
-            background: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-start"));
-            background-image: linear-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-start"));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;}
+            @include text-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-start"));
+        }
     };
+
     &__4 {
         background-color:map-get($colour-menu4,"back");
         font-family: 'Kaushan', sans-serif;
-
+        h3::before {
+            @include menu-border("../../images/Menu4.png");
+        }
+        h3::after {
+            @include menu-border("../../images/Menu4.png");
+            transform:scaleX(-1);
+        }
         h2:nth-child(1) {
-            background: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-end"));
-            background-image: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-end"));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @include text-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-end"));
         }
         h2:nth-child(2) {
-            background: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-start"));
-            background-image: linear-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-start"));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;}
-
+            @include text-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-start"));
+        }
     };
+
     &__main {
         font-size: 2rem;
         width: 40%;
@@ -95,7 +150,18 @@
             font-family: 'worstveld', sans-serif;
             font-size: 4rem;}
     }
+
     &__sec {
+        font-size: 1.8rem;
+        @include mobile-only{font-size: 0.7rem;}
+        h2:nth-child(1) {font-size:3rem;
+            @include mobile-only{font-size: 1.5rem;}}
+        &.menu__1 {font-size: 2.2rem;
+            @include mobile-only{font-size: 1.2rem;}
+            }
+        &.menu__2 {font-size: 1.5rem;
+                @include mobile-only{font-size: 0.5rem;}
+                }
         h3 {
             align-items: center;
             display: flex;
@@ -104,20 +170,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        h3::before, h3::after {
-            border-top: .3rem solid;
-            content: "";
-            flex: 1;
-            margin: 1rem;
-        }
-        h2:nth-child(1) {font-size:3rem;
-            @include mobile-only{font-size: 1.8rem;}}
-        font-size: 1.4rem;
-        @include mobile-only{font-size: 0.8rem;}
-        &.menu__1 {font-size: 1.7rem;
-            @include mobile-only{font-size: 1rem;}}
-        &.menu__3 {font-size: 1.7rem;
-            @include mobile-only{font-size: 1rem;}}
         width:85%;
         height:auto;
         margin:auto;
@@ -126,48 +178,4 @@
         margin-bottom:10rem;
         td:nth-of-type(2n){text-align: right;}
     }
-    &__end {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        margin-top:20px;
-        margin-bottom:20px;
-        .fas.fa-music {padding-right:10px;
-                font-size: 2.5rem;}
-        h2 {padding-left: 10px;
-            margin-bottom:0;
-        }
-    }
 }
-
-.fas.fa-music
-{
-    background: linear-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
-    background-image: linear-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size:4rem;
-    margin-bottom: 0;
-}
-
-.fas.fa-music + h2 {
-    margin-top:0;
-    font-size:3rem;
-    @include mobile-only{font-size: 1.8rem;}
-}
-
-/*
-h3 {
-    align-items: center;
-    display: flex;
-    text-align: center;
-    width:90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-h3::before, h3::after {
-    border-top: .1rem solid;
-    content: "";
-    flex: 1;
-    margin: 1rem;
-}*/
