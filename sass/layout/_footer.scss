@@ -14,7 +14,6 @@ footer {
     &__logo {
         font-size: 1.5rem;
         @include mobile-only{font-size: 1rem;}
-        color: $colour-secondary;
         display:flex;
         justify-content: space-between;
         padding-top:20px;
@@ -22,5 +21,24 @@ footer {
         padding-right:40px;
         font-family: 'Poppins-Regular', sans-serif;
         list-style-type: none;
+        animation: headshake 1000ms cubic-bezier(0.6, 0, 0.6, 1) 200ms infinite;
+        
+        a {text-decoration: none;
+        color: $colour-secondary;}
+    }
+}
+
+@keyframes headshake {
+    10% {
+        // entièrement à droite
+        transform: translateX($shake-intensity);
+    }
+    20% {
+        // entièrement à gauche
+        transform: translateX($shake-intensity * -1);
+    }
+    30% {
+        // reste en place au début
+        transform: translateX($shake-intensity * 0);
     }
 }

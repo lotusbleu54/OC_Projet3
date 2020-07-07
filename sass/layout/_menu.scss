@@ -26,14 +26,12 @@
         }
         i { 
             @include text-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
-            font-size:5rem;
+            font-size:4rem;
             @include mobile-only{font-size: 3rem;}
             margin-bottom: 0;
         }
         i + h2 {
             margin-top:0;
-            font-size:4rem;
-            @include mobile-only{font-size: 2rem;}
         }
         .bas {
             display:flex;
@@ -134,21 +132,15 @@
     };
 
     &__main {
-        font-size: 2rem;
-        width: 40%;
-        @include mobile-only{width: 90%;
-        font-size: 1.5rem;}
+        width: 35%;
+        @include mobile-only{width: 80%;}
         height: 500px;
         margin:20px;
-        &.menu__1 >h2:nth-child(3) {
-            font-family: 'worstveld', sans-serif;
-            font-size: 4rem;}
-        &.menu__3 >h2:nth-child(2) {
-            font-family: 'worstveld', sans-serif;
-            font-size: 4rem;}
-        &.menu__4 >h2:nth-child(2) {
-            font-family: 'worstveld', sans-serif;
-            font-size: 4rem;}
+        padding: 4%;
+        &:hover > .maintext{
+            transform: scale(1.2);
+            opacity: 0.5;
+        }
     }
 
     &__sec {
@@ -178,4 +170,58 @@
         margin-bottom:10rem;
         td:nth-of-type(2n){text-align: right;}
     }
+}
+
+.maintext {
+    font-size: 1.6rem;
+    @include mobile-only{font-size: 1.3rem;}
+    &.menu__1 >h2:nth-child(3) {
+        font-family: 'worstveld', sans-serif;
+        font-size: 3rem;}
+    &.menu__3 >h2:nth-child(2) {
+        font-family: 'worstveld', sans-serif;
+        font-size: 3rem;}
+    &.menu__4 >h2:nth-child(2) {
+        font-family: 'worstveld', sans-serif;
+        font-size:3rem;}
+        
+    transform: scale(1);
+    transition: all 400ms;
+}
+
+.hover {
+    text-decoration: none;
+    cursor: default;
+    &::after {
+        display:block;
+        content:"";
+        border-bottom: solid 0.4rem;  
+        transform: scaleX(0);  
+        transition: transform 250ms ease-in-out;
+        transform-origin:right center;
+    }
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin:left center;
+      }
+    &__1 {color:map-get($colour-menu1,"font");
+        &::after {
+        border-bottom-color:map-get($colour-menu1,"font")}
+        }
+    &__2-1 {color:map-get($colour-menu2,"font-start");
+        &::after {
+        border-bottom-color:map-get($colour-menu2,"font-start")}
+        }
+    &__2-2 {color:map-get($colour-menu2,"font-middle");
+        &::after {
+        border-bottom-color:map-get($colour-menu2,"font-middle")}
+        }
+    &__2-3 {color:map-get($colour-menu2,"font-end");
+        &::after {
+        border-bottom-color:map-get($colour-menu2,"font-end")}
+        }
+    &__3, &__4 {color:black;
+        &::after {
+        border-bottom-color:black}
+        }
 }
