@@ -21,8 +21,10 @@
     </header>
 
     <main class="container">
-        <a href="menus/menu1.html" class="menu menu__1 menu__main">
-            <div class="menu__1 maintext">
+        <!--Classes permettant de jouer en CSS sur les propriétés communes-->
+        <a href="menus/menu1.html" class="menu menu__1 menu__main"> 
+            <!--Classe spécifique au texte pour permettre l'effet zoom-->
+            <div class="zoom">
                 <i class="fas fa-music"></i>
                 <h2>
                     La note enchantée
@@ -34,7 +36,7 @@
         </a>
 
         <a href="menus/menu2.html" class="menu menu__2 menu__main">
-            <div class="menu__2 maintext">
+            <div class="zoom">
                 <h2>
                     Le chic à la française
                 </h2>
@@ -44,7 +46,7 @@
             </div>
         </a>
         <a href="menus/menu3.html" class="menu menu__3 menu__main">
-            <div class="menu__3 maintext">
+            <div class="zoom">
                 <h2>
                     Le délice des papilles
                 </h2>
@@ -54,7 +56,7 @@
             </div>
         </a>
         <a href="menus/menu4.html" class="menu menu__4 menu__main">
-            <div class="menu__4 maintext">
+            <div class="zoom">
                 <h2>
                     La palette du goût
                 </h2>
@@ -67,17 +69,17 @@
 
     <div class="btn">
         Prochainement
-        <span>.</span>
-        <span>.</span>
-        <span>.</span>
+            <span>.</span> <!--Span pour pouvoir animer les points de suspension de façon indépendante-->
+            <span>.</span>
+            <span>.</span>
     </div>
 
     <footer>
         <div class="footer">
             <nav>
                 <ul class="footer__logo">
-                    <li> <a href="#" target="_blank">Mentions légales</a> </li>
-                    <li> <a href="mailto:lotusbleu54@yahoo.com">Contactez-nous</a>
+                    <li> <a href="#" target="_blank">Mentions légales</a> </li> <!--Renvoi vers page d'accueil dans nouvel onglet-->
+                    <li> <a href="mailto:lotusbleu54@yahoo.com">Contactez-nous</a> <!--Lien adresse mail-->
                     </li>
                 </ul>
             </nav>

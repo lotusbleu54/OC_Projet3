@@ -25,17 +25,17 @@ footer {
   background: #579C87;
   height: 6rem;
   margin: auto;
-  max-width: 1900px;
+  max-width: 1920px;
 }
 .footer__logo {
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: space-between;
+  font-size: 2rem;
+  font-family: "Poppins-Regular", sans-serif;
+  list-style-type: none;
   padding-top: 20px;
   padding-left: 40px;
   padding-right: 40px;
-  font-family: "Poppins-Regular", sans-serif;
-  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
   animation: headshake 1000ms cubic-bezier(0.6, 0, 0.6, 1) 200ms infinite;
 }
 @media screen and (max-width: 599px) {
@@ -63,8 +63,7 @@ footer {
   background: #579C87;
   height: auto;
   width: 50%;
-  font-size: 2.5rem;
-  /*Centrage sur la page*/
+  font-size: 2.4rem;
   margin: auto;
   font-family: "Poppins-Regular", sans-serif;
   color: #FDCB46;
@@ -128,16 +127,26 @@ footer {
   box-shadow: 5px 5px 10px grey;
 }
 .menu table {
-  text-align: left;
   width: 80%;
   margin: auto;
+  text-align: left;
+}
+.menu table td:nth-of-type(2n) {
+  text-align: right;
+}
+.menu h3 {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menu__1 {
   background-color: #fcdfdb;
   font-family: "Devonshire", sans-serif;
   color: #3c1218;
 }
-.menu__1 h3::before, .menu__1 h3::after {
+.menu__1 h3::before,
+.menu__1 h3::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu1.png") 70 stretch;
   content: "";
@@ -145,19 +154,24 @@ footer {
   margin: 1rem;
 }
 .menu__1 i {
+  font-size: 4rem;
+  margin-bottom: 0;
   background: linear-gradient(to right, #f05862, #f6916a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 4rem;
-  margin-bottom: 0;
 }
 @media screen and (max-width: 599px) {
   .menu__1 i {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 .menu__1 i + h2 {
   margin-top: 0;
+  margin-bottom: 0;
+}
+.menu__1 h2:nth-child(3) {
+  font-family: "worstveld", sans-serif;
+  font-size: 3rem;
 }
 .menu__1 .bas {
   display: flex;
@@ -167,22 +181,22 @@ footer {
   margin-bottom: 20px;
 }
 .menu__1 .bas i {
-  padding-right: 10px;
-  font-size: 4rem;
-}
-@media screen and (max-width: 599px) {
-  .menu__1 .bas i {
-    font-size: 2.5rem;
-  }
-}
-.menu__1 .bas h2 {
-  padding-left: 10px;
-  margin-bottom: 0;
+  margin-right: 20px;
 }
 .menu__2 {
   background-color: #fff5fe;
   font-family: "CroissantOne", sans-serif;
   background: linear-gradient(to bottom, #d8852e, #8f5aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__2 h2:nth-child(1) {
+  background: linear-gradient(to right, #d8852e, #8f5aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__2 h2:nth-child(2) {
+  background: linear-gradient(to right, #d8852e, #d8852e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -231,19 +245,19 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__2 h2:nth-child(1) {
-  background: linear-gradient(to right, #d8852e, #8f5aff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu__2 h2:nth-child(2) {
-  background: linear-gradient(to right, #d8852e, #d8852e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .menu__3 {
   background-color: #f9f9f9;
   font-family: "GreatVibes", sans-serif;
+}
+.menu__3 h2:nth-child(1) {
+  background: linear-gradient(to right, #0431df, #0889fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__3 h2:nth-child(2) {
+  color: #0431df;
+  font-family: "worstveld", sans-serif;
+  font-size: 3rem;
 }
 .menu__3 h3:nth-of-type(1)::before {
   border-top: 1rem solid transparent;
@@ -290,19 +304,19 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__3 h2:nth-child(1) {
-  background: linear-gradient(to right, #0431df, #0889fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu__3 h2:nth-child(2) {
-  background: linear-gradient(to right, #0431df, #0431df);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .menu__4 {
   background-color: #fdfffd;
   font-family: "Kaushan", sans-serif;
+}
+.menu__4 h2:nth-child(1) {
+  background: linear-gradient(to right, #3d9339, #beff7f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__4 h2:nth-child(2) {
+  color: #3d9339;
+  font-family: "worstveld", sans-serif;
+  font-size: 3rem;
 }
 .menu__4 h3::before {
   border-top: 1rem solid transparent;
@@ -319,102 +333,108 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__4 h2:nth-child(1) {
-  background: linear-gradient(to right, #3d9339, #beff7f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu__4 h2:nth-child(2) {
-  background: linear-gradient(to right, #3d9339, #3d9339);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .menu__main {
-  width: 35%;
   height: 500px;
+  width: 35%;
   margin: 20px;
   padding: 4%;
+  font-size: 1.8rem;
 }
 @media screen and (max-width: 599px) {
   .menu__main {
-    width: 80%;
+    width: 90%;
   }
 }
-.menu__main:hover > .maintext {
+@media screen and (max-width: 599px) {
+  .menu__main {
+    padding: 10%;
+  }
+}
+@media screen and (max-width: 599px) {
+  .menu__main {
+    font-size: 0.9rem;
+  }
+}
+.menu__main:hover > .zoom {
   transform: scale(1.2);
   opacity: 0.5;
 }
 .menu__sec {
-  font-size: 1.8rem;
-  width: 85%;
+  width: 90%;
   height: auto;
   margin: auto;
   padding-top: 60px;
   padding-bottom: 60px;
   margin-bottom: 10rem;
 }
-@media screen and (max-width: 599px) {
-  .menu__sec {
-    font-size: 0.7rem;
-  }
-}
-.menu__sec h2:nth-child(1) {
-  font-size: 3rem;
-}
-@media screen and (max-width: 599px) {
-  .menu__sec h2:nth-child(1) {
-    font-size: 1.5rem;
-  }
-}
 .menu__sec.menu__1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 @media screen and (max-width: 599px) {
   .menu__sec.menu__1 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+  }
+}
+.menu__sec.menu__1 h2 {
+  font-size: 4rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__sec.menu__1 h2 {
+    font-size: 2rem;
   }
 }
 .menu__sec.menu__2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 @media screen and (max-width: 599px) {
   .menu__sec.menu__2 {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 }
-.menu__sec h3 {
-  align-items: center;
-  display: flex;
-  text-align: center;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.menu__sec td:nth-of-type(2n) {
-  text-align: right;
-}
-
-.maintext {
-  font-size: 1.6rem;
-  transform: scale(1);
-  transition: all 400ms;
+.menu__sec.menu__2 h2 {
+  font-size: 2.4rem;
 }
 @media screen and (max-width: 599px) {
-  .maintext {
+  .menu__sec.menu__2 h2 {
+    font-size: 1.2rem;
+  }
+}
+.menu__sec.menu__3 {
+  font-size: 2rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__sec.menu__3 {
+    font-size: 1rem;
+  }
+}
+.menu__sec.menu__3 h2 {
+  font-size: 3rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__sec.menu__3 h2 {
+    font-size: 1.5rem;
+  }
+}
+.menu__sec.menu__4 {
+  font-size: 1.6rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__sec.menu__4 {
+    font-size: 0.8rem;
+  }
+}
+.menu__sec.menu__4 h2 {
+  font-size: 2.6rem;
+}
+@media screen and (max-width: 599px) {
+  .menu__sec.menu__4 h2 {
     font-size: 1.3rem;
   }
 }
-.maintext.menu__1 > h2:nth-child(3) {
-  font-family: "worstveld", sans-serif;
-  font-size: 3rem;
-}
-.maintext.menu__3 > h2:nth-child(2) {
-  font-family: "worstveld", sans-serif;
-  font-size: 3rem;
-}
-.maintext.menu__4 > h2:nth-child(2) {
-  font-family: "worstveld", sans-serif;
-  font-size: 3rem;
+
+.zoom {
+  transform: scale(1);
+  transition: all 400ms;
 }
 
 .hover {
@@ -426,7 +446,7 @@ footer {
   content: "";
   border-bottom: solid 0.4rem;
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
+  transition: transform 400ms ease-in-out;
   transform-origin: right center;
 }
 .hover:hover::after {
@@ -458,13 +478,12 @@ footer {
   border-bottom-color: #8f5aff;
 }
 .hover__3, .hover__4 {
-  color: black;
+  color: #000;
 }
 .hover__3::after, .hover__4::after {
-  border-bottom-color: black;
+  border-bottom-color: #000;
 }
 
-/*Ajout de la police Poppins*/
 @font-face {
   font-family: "Poppins_Bold";
   src: url(../../fonts/Poppins-Bold.otf) format("opentype");
@@ -502,15 +521,11 @@ html {
 }
 
 body {
-  max-width: 1900px;
+  max-width: 1920px;
   margin: auto;
   background: #eee;
   font-family: "Asimov", sans-serif;
-  color: black;
+  color: #000;
   overflow: scroll;
   text-align: center;
-}
-
-main > h2 {
-  font-size: 2.5rem;
 }

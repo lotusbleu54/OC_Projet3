@@ -1,4 +1,5 @@
 // Mixins
+
 @mixin mobile-only {
     @media screen and (max-width: map-get($breakpoints, mobile))
     {@content;}
@@ -10,10 +11,16 @@
     -webkit-text-fill-color: transparent;
   }
 
-  @mixin menu-border($image) {
-    border-top: 1rem solid transparent;
-    border-image: url($image) 70 stretch;
-    content: "";
-    flex: 1;
-    margin: 1rem;
+//Mixin qui crée le trait à gauche et à droite des cat&gories à l'aide d'une image
+@mixin menu-border($image) {
+  border-top: 1rem solid transparent;
+  border-image: url($image) 70 stretch; //Paramètres optimaux pour afficher correctement l'image en tant que bordure
+  content: ""; //Contenu non vide nécessaire
+  flex: 1; //Nécessaire pour occuper place sur largeur 
+  margin: 1rem; //Ne pas être collée au titre de catégorie
+  }
+
+@mixin color-cat($color) {
+  color:$color;
+  &::after{border-bottom-color:$color;}
   }

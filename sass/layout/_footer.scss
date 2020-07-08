@@ -1,3 +1,4 @@
+//Position fixe du footer
 footer {
     width: 100%;
     position:fixed;
@@ -5,24 +6,31 @@ footer {
     left:0;
 }
 
+//Centré en largeur et même taille max que le bloc page. Même hauteur et couleur que le header
 .footer {
     background: $colour-primary;
     height: 6rem;
     margin:auto;
-    max-width: 1900px;
+    max-width: 1920px;
 
+    //Mentions légales et Contact
     &__logo {
-        font-size: 1.5rem;
-        @include mobile-only{font-size: 1rem;}
-        display:flex;
-        justify-content: space-between;
+        font-size: $default-font-size;
+        @include mobile-only{font-size: 0.5*$default-font-size;}
+        font-family: 'Poppins-Regular', sans-serif;
+        list-style-type: none; //Enlever puces liste
         padding-top:20px;
         padding-left:40px;
         padding-right:40px;
-        font-family: 'Poppins-Regular', sans-serif;
-        list-style-type: none;
+
+        //Réparition flex sur la largeur
+        display:flex;
+        justify-content: space-between;
+
+        //Animation "Wizz"
         animation: headshake 1000ms cubic-bezier(0.6, 0, 0.6, 1) 200ms infinite;
         
+        //Suppression de la mise en forme des liens
         a {text-decoration: none;
         color: $colour-secondary;}
     }
@@ -38,7 +46,7 @@ footer {
         transform: translateX($shake-intensity * -1);
     }
     30% {
-        // reste en place au début
+        // reste en place au début un certain temps pour ne pas secouer en permanence
         transform: translateX($shake-intensity * 0);
     }
 }

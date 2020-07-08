@@ -1,227 +1,301 @@
+//Affichage du bloc page en colonne
 .container {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.menu
-{   
-    display:flex;
+//Propriétés valables pour tous les blocs menus (page principale comme secondaire)
+.menu {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    text-decoration: none;
-    box-shadow: 5px 5px 10px grey;
-    table {text-align:left;
-    width:80%;
-    margin:auto;
+    text-decoration: none; //enlever le soulignement des liens
+    box-shadow: 5px 5px 10px grey; //effet d'ombre
+
+    //Mise en forme des tables incluant les plats et les prix dans les menus 1 à 4
+    table {
+        width: 80%;
+        margin: auto;
+        text-align: left;
+        //Prix alignés à droite
+        td:nth-of-type(2n) {
+            text-align: right;
+        }
     }
 
+    //Permettre l'affichage des barres avant et après les h3 dans les menus 1 à 4
+    h3 {
+        display: flex;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    //Spécificités propres au premier menu
     &__1 {
-        background-color:map-get($colour-menu1,"back");
-        font-family: 'Devonshire', sans-serif;
-        color:map-get($colour-menu1,"font");
-        h3::before, h3::after {
+        background-color: map-get($colour-menu1, "back");
+        font-family: "Devonshire", sans-serif;
+        color: map-get($colour-menu1, "font");
+
+        //Bordure stylée avant et après catégories (h3)
+        h3::before,
+        h3::after {
             @include menu-border("../../images/Menu1.png");
         }
-        i { 
-            @include text-gradient(to right, map-get($colour-menu1,"music-start"), map-get($colour-menu1,"music-end"));
-            font-size:4rem;
-            @include mobile-only{font-size: 3rem;}
-            margin-bottom: 0;
+
+        //Style propre à la note de musique
+        i {
+            font-size: 2*$default-font-size;
+            @include mobile-only {
+                font-size: 1.25*$default-font-size;
+            }
+            margin-bottom: 0; //Pour être colée au titre du menu
+
+            //Fonction de dégradé couleur définie en mixin
+            @include text-gradient(
+                to right,
+                map-get($colour-menu1, "music-start"),
+                map-get($colour-menu1, "music-end")
+            );
         }
         i + h2 {
-            margin-top:0;
+            margin-top: 0; //Pour être colé à la note de musique
+            margin-bottom: 0; //Identique à la note de musique pour bien centrer le texte du bas
         }
+
+        //Police et taille spécifique au mot "MENU"
+        h2:nth-child(3) {
+            font-family: "worstveld", sans-serif;
+            font-size: 1.5*$default-font-size;}
+
+        //Spécifique à la partie répétant le titre du menu avec la note de musique à gauche
         .bas {
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            margin-top:20px;
-            margin-bottom:20px;
-            i {padding-right:10px;
-                    font-size: 4rem;
-                    @include mobile-only{font-size: 2.5rem;}}
-            h2 {padding-left: 10px;
-                margin-bottom:0;
+            display: flex;
+            justify-content: center; //Centrage milieu de page
+            align-items: center; //Note de musique et texte alignés verticalement
+            margin-top: 20px;
+            margin-bottom: 20px;
+            i {
+                margin-right: 20px; //Espacement entre note de musique et texte
             }
         }
-    };
+    }
 
+    //Spécificités propres au second menu
     &__2 {
-        background-color:map-get($colour-menu2,"back");
-        font-family: 'CroissantOne', sans-serif;
+        background-color: map-get($colour-menu2, "back");
+        font-family: "CroissantOne", sans-serif;
+
+        //Gradient de couleur du haut vers le bas dans le menu...
+        @include text-gradient(to bottom, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-end"));
+
+        //...sauf pour le titre pour lequel le gradient se fait de gauche à droite
+        h2:nth-child(1) {
+            @include text-gradient(to right, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-end"));
+        }
+
+        //...et pour la mention "Menu" en page principale pour laquelle il n'y a qu'une couleur. 
+        //On utilise malgré tout la fonction gradient pour prendre la priorité sur le gradient vers le bas.
+        h2:nth-child(2) {
+            @include text-gradient(to right, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-start"));
+        }
+
+        //Ajout des bordure avant et après les catégories
         h3:nth-of-type(1)::before {
-            @include menu-border("../../images/Menu2-1.png");
+            @include menu-border(
+                "../../images/Menu2-1.png"
+            ); //Une image par catégorie car les couleurs sont différentes
         }
         h3:nth-of-type(1)::after {
             @include menu-border("../../images/Menu2-1.png");
-            transform:scaleX(-1);
+            transform: scaleX(-1); //On utilise la même image qu'on tourne de 180°
         }
         h3:nth-of-type(2)::before {
             @include menu-border("../../images/Menu2-2.png");
         }
         h3:nth-of-type(2)::after {
             @include menu-border("../../images/Menu2-2.png");
-            transform:scaleX(-1);
+            transform: scaleX(-1);
         }
         h3:nth-of-type(3)::before {
             @include menu-border("../../images/Menu2-3.png");
         }
         h3:nth-of-type(3)::after {
             @include menu-border("../../images/Menu2-3.png");
-            transform:scaleX(-1);
+            transform: scaleX(-1);
         }
-        @include text-gradient(to bottom, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
-        h2:nth-child(1) {
-            @include text-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-end"));
-                    }
-        h2:nth-child(2) {
-            @include text-gradient(to right, map-get($colour-menu2,"font-start"), map-get($colour-menu2,"font-start"));
-        }
-    };
+    }
 
+    //Spécificités propres au troisième menu
     &__3 {
-        background-color:map-get($colour-menu3,"back");
-        font-family: 'GreatVibes', sans-serif;
+        background-color: map-get($colour-menu3, "back");
+        font-family: "GreatVibes", sans-serif;
+
+        //Dégradé de couleur vers la droite sur les titres uniquement
+        h2:nth-child(1) {
+            @include text-gradient(to right, map-get($colour-menu3, "font-start"), map-get($colour-menu3, "font-end"));
+        }
+
+        //Style spécifique au mot "Menu"
+        h2:nth-child(2) {
+            color:map-get($colour-menu3, "font-start");
+            font-family: "worstveld", sans-serif;
+            font-size: 1.5*$default-font-size;
+        }
+
+        //Idem Menu2 : Une image par catégorie à cause des couleurs différentes.
         h3:nth-of-type(1)::before {
             @include menu-border("../../images/Menu3-1.png");
         }
         h3:nth-of-type(1)::after {
             @include menu-border("../../images/Menu3-1.png");
-            transform:scaleX(-1);
+            transform: scaleX(-1);
         }
         h3:nth-of-type(2)::before {
-                @include menu-border("../../images/Menu3-2.png");
+            @include menu-border("../../images/Menu3-2.png");
         }
         h3:nth-of-type(2)::after {
-                @include menu-border("../../images/Menu3-2.png");
-                transform:scaleX(-1);
+            @include menu-border("../../images/Menu3-2.png");
+            transform: scaleX(-1);
         }
         h3:nth-of-type(3)::before {
             @include menu-border("../../images/Menu3-3.png");
         }
         h3:nth-of-type(3)::after {
             @include menu-border("../../images/Menu3-3.png");
-            transform:scaleX(-1);
+            transform: scaleX(-1);
         }
-        h2:nth-child(1) {
-            @include text-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-end"));
-        }
-        h2:nth-child(2) {
-            @include text-gradient(to right, map-get($colour-menu3,"font-start"), map-get($colour-menu3,"font-start"));
-        }
-    };
+    }
 
+    //Spécificités propres au quatrième menu
     &__4 {
-        background-color:map-get($colour-menu4,"back");
-        font-family: 'Kaushan', sans-serif;
+        background-color: map-get($colour-menu4, "back");
+        font-family: "Kaushan", sans-serif;
+
+        //Dégradé de couleur sur les titres uniquement
+        h2:nth-child(1) {
+            @include text-gradient(to right, map-get($colour-menu4, "font-start"), map-get($colour-menu4, "font-end"));
+        }
+
+        //Style spécifique au mot "Menu"
+        h2:nth-child(2) {
+            color:map-get($colour-menu4, "font-start");
+            font-family: "worstveld", sans-serif;
+            font-size: 1.5*$default-font-size;
+        }
+
+        //Image unique pour chaque catégorie
         h3::before {
             @include menu-border("../../images/Menu4.png");
         }
         h3::after {
             @include menu-border("../../images/Menu4.png");
-            transform:scaleX(-1);
+            transform: scaleX(-1);
         }
-        h2:nth-child(1) {
-            @include text-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-end"));
-        }
-        h2:nth-child(2) {
-            @include text-gradient(to right, map-get($colour-menu4,"font-start"), map-get($colour-menu4,"font-start"));
-        }
-    };
+    }
 
+    //Spécificités propres à la page d'accueil
     &__main {
+        height: 500px; //hauteur fixée pour être homogène entre tous les menus
+        //Largeur fixée à 35% de la page sur grand écran pour permettre l'affichage de 2 menus sur la largeur
         width: 35%;
-        @include mobile-only{width: 80%;}
-        height: 500px;
-        margin:20px;
-        padding: 4%;
-        &:hover > .maintext{
+        //En mobile un seul menu affiché sur la largeur
+        @include mobile-only {width: 90%;}
+
+        margin: 20px; //Pour que les menus ne soient pas collés les uns aux autres
+        padding: 4%; //Permet à l'animation zoom de ne pas sortir du cadre quelle que soit la résolution
+        @include mobile-only {padding: 10%;} //Plus de padding sur mobile car menu plus large aussi
+
+        font-size: 0.9*$default-font-size;
+        @include mobile-only {font-size: 0.45*$default-font-size;}
+
+        //Animation sur le texte en cas de passage souris dans le bloc menu
+        &:hover > .zoom {
             transform: scale(1.2);
             opacity: 0.5;
         }
     }
 
+    //Spécificités propres aux pages des menus 1 à 4
     &__sec {
-        font-size: 1.8rem;
-        @include mobile-only{font-size: 0.7rem;}
-        h2:nth-child(1) {font-size:3rem;
-            @include mobile-only{font-size: 1.5rem;}}
-        &.menu__1 {font-size: 2.2rem;
-            @include mobile-only{font-size: 1.2rem;}
-            }
-        &.menu__2 {font-size: 1.5rem;
-                @include mobile-only{font-size: 0.5rem;}
-                }
-        h3 {
-            align-items: center;
-            display: flex;
-            text-align: center;
-            width:90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        width:85%;
-        height:auto;
-        margin:auto;
+        width: 90%; //Occuper la largeur page en desktop comme mobile
+        height: auto; //S'adapte au contenu
+        margin: auto; //Centrage page
         padding-top: 60px;
-        padding-bottom:60px;
-        margin-bottom:10rem;
-        td:nth-of-type(2n){text-align: right;}
+        padding-bottom: 60px;
+        margin-bottom: 10rem; //Afin de toujours avoir assez de marge pour afficher le footer 
+        //(sur la page principale la marge est faite grâce au "btn" prochainement)
+
+        //Tailles des polices propres à chaque menu (car styles de police différentes)
+        &.menu__1 {
+            font-size: 1.25*$default-font-size;
+            @include mobile-only {font-size:0.625*$default-font-size;}
+            h2 {
+                font-size: 2*$default-font-size;
+                @include mobile-only {font-size:$default-font-size;}
+            }
+        }
+        &.menu__2 {
+            font-size: 0.7*$default-font-size;
+            @include mobile-only {font-size:0.35*$default-font-size;}
+            h2 {
+                font-size: 1.2*$default-font-size;
+                @include mobile-only {font-size:0.6*$default-font-size;}
+            }
+        }
+        &.menu__3 {
+            font-size: $default-font-size;
+            @include mobile-only {font-size:0.5*$default-font-size;}
+            h2 {
+                font-size: 1.5*$default-font-size;
+                @include mobile-only {font-size:0.75*$default-font-size;}
+            }
+        }
+        &.menu__4 {
+            font-size: 0.8*$default-font-size;
+            @include mobile-only {font-size:0.4*$default-font-size;}
+            h2 {
+                font-size: 1.3*$default-font-size;
+                @include mobile-only {font-size:0.65*$default-font-size;}
+            }
+        }
     }
 }
 
-.maintext {
-    font-size: 1.6rem;
-    @include mobile-only{font-size: 1.3rem;}
-    &.menu__1 >h2:nth-child(3) {
-        font-family: 'worstveld', sans-serif;
-        font-size: 3rem;}
-    &.menu__3 >h2:nth-child(2) {
-        font-family: 'worstveld', sans-serif;
-        font-size: 3rem;}
-    &.menu__4 >h2:nth-child(2) {
-        font-family: 'worstveld', sans-serif;
-        font-size:3rem;}
-        
+//Animation sur le texte à zoomer
+.zoom {
     transform: scale(1);
     transition: all 400ms;
 }
 
+//Animation de surlignage des catégories de plats
 .hover {
-    text-decoration: none;
-    cursor: default;
+    text-decoration: none; //Enlever référence au lien html
+    cursor: default; //Idem
+
+    //Ajout de la pseudo-classe pour ajouter trait sous le texte
     &::after {
-        display:block;
-        content:"";
-        border-bottom: solid 0.4rem;  
-        transform: scaleX(0);  
-        transition: transform 250ms ease-in-out;
-        transform-origin:right center;
+        display: block; //Pseudo élément créé
+        content: ""; //Nécessaire d'avoir un contenu pour faire apparraître la bordure
+        border-bottom: solid 0.4rem; //Soulignement fait à l'aide d'une bordure inf
+        transform: scaleX(0);
+        transition: transform 400ms ease-in-out;
+        transform-origin: right center; //Effet de gauche à droite quand la souris quitte
     }
+
+    //Effet de gauche à droite quand la souris arrive sur l'élément
     &:hover::after {
         transform: scaleX(1);
-        transform-origin:left center;
-      }
-    &__1 {color:map-get($colour-menu1,"font");
-        &::after {
-        border-bottom-color:map-get($colour-menu1,"font")}
-        }
-    &__2-1 {color:map-get($colour-menu2,"font-start");
-        &::after {
-        border-bottom-color:map-get($colour-menu2,"font-start")}
-        }
-    &__2-2 {color:map-get($colour-menu2,"font-middle");
-        &::after {
-        border-bottom-color:map-get($colour-menu2,"font-middle")}
-        }
-    &__2-3 {color:map-get($colour-menu2,"font-end");
-        &::after {
-        border-bottom-color:map-get($colour-menu2,"font-end")}
-        }
-    &__3, &__4 {color:black;
-        &::after {
-        border-bottom-color:black}
-        }
+        transform-origin: left center;
+    }
+
+    //Mixin qui permet de changer la couleur des catégories et des traits de soulignement
+    &__1 {@include color-cat(map-get($colour-menu1, "font"));}
+    &__2-1 {@include color-cat(map-get($colour-menu2, "font-start"));}
+    &__2-2 {@include color-cat(map-get($colour-menu2, "font-middle"));}
+    &__2-3 {@include color-cat(map-get($colour-menu2, "font-end"));}
+    &__3,
+    &__4 {@include color-cat($colour-black);}
 }
