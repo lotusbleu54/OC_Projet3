@@ -338,7 +338,7 @@ footer {
   width: 35%;
   margin: 20px;
   padding: 4%;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 @media screen and (max-width: 599px) {
   .menu__main {
@@ -352,7 +352,7 @@ footer {
 }
 @media screen and (max-width: 599px) {
   .menu__main {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 }
 .menu__main:hover > .zoom {

@@ -208,8 +208,8 @@
         padding: 4%; //Permet à l'animation zoom de ne pas sortir du cadre quelle que soit la résolution
         @include mobile-only {padding: 10%;} //Plus de padding sur mobile car menu plus large aussi
 
-        font-size: 0.9*$default-font-size;
-        @include mobile-only {font-size: 0.45*$default-font-size;}
+        font-size: $default-font-size;
+        @include mobile-only {font-size: 0.7*$default-font-size;}
 
         //Animation sur le texte en cas de passage souris dans le bloc menu
         &:hover > .zoom {
