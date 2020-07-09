@@ -126,20 +126,6 @@ footer {
   text-decoration: none;
   box-shadow: 5px 5px 10px grey;
 }
-.menu table {
-  width: 80%;
-  margin: auto;
-  text-align: left;
-}
-.menu table td:nth-of-type(2n) {
-  text-align: right;
-}
-.menu h3 {
-  display: flex;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
 .menu__1 {
   background-color: #fcdfdb;
   font-family: "Devonshire", sans-serif;
@@ -366,6 +352,20 @@ footer {
   padding-top: 60px;
   padding-bottom: 60px;
   margin-bottom: 10rem;
+}
+.menu__sec table {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+.menu__sec table td:nth-of-type(2n) {
+  text-align: right;
+}
+.menu__sec h3 {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menu__sec.menu__1 {
   font-size: 2.5rem;

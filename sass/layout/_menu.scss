@@ -14,25 +14,6 @@
     text-decoration: none; //enlever le soulignement des liens
     box-shadow: 5px 5px 10px grey; //effet d'ombre
 
-    //Mise en forme des tables incluant les plats et les prix dans les menus 1 à 4
-    table {
-        width: 80%;
-        margin: auto;
-        text-align: left;
-        //Prix alignés à droite
-        td:nth-of-type(2n) {
-            text-align: right;
-        }
-    }
-
-    //Permettre l'affichage des barres avant et après les h3 dans les menus 1 à 4
-    h3 {
-        display: flex;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     //Spécificités propres au premier menu
     &__1 {
         background-color: map-get($colour-menu1, "back");
@@ -227,6 +208,25 @@
         padding-bottom: 60px;
         margin-bottom: 10rem; //Afin de toujours avoir assez de marge pour afficher le footer 
         //(sur la page principale la marge est faite grâce au "btn" prochainement)
+
+        //Mise en forme des tables incluant les plats et les prix dans les menus 1 à 4
+        table {
+            width: 80%;
+            margin: auto;
+            text-align: left;
+            //Prix alignés à droite
+            td:nth-of-type(2n) {
+            text-align: right;
+            }
+        }
+
+        //Permettre l'affichage des barres avant et après les h3 dans les menus 1 à 4
+        h3 {
+            display: flex;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         //Tailles des polices propres à chaque menu (car styles de police différentes)
         &.menu__1 {
