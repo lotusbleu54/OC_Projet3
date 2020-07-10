@@ -5,10 +5,10 @@ $colour-black: #000;
 $colour-white: #eee;
 $colour-menu1: ("back":#fcdfdb, "font":#3c1218, "music-start":#f05862, "music-end":#f6916a);
 $colour-menu2: ("back":#fff5fe, "font-start":#d8852e, "font-middle":#B57093, "font-end":#8f5aff);
-$colour-menu3: ("back":#f9f9f9,"font-start":#0431df, "font-end":#0889fb);
+$colour-menu3: ("back":#f9f9f9,"font-start":#0431df, "font-middle":#0670F3, "font-end":#0889fb);
 $colour-menu4:("back":#fdfffd,"font-start":#3d9339, "font-end":#beff7f);
 $shake-intensity: 2%;
-$default-font-size: 2rem;
+$default-font-size: 1.7rem;
 
 //Breakpoint mobile
-$breakpoints: (mobile: 599px);
+$breakpoints: (mobile: 599px, tab:999px);

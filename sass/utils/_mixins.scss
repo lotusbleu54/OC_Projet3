@@ -5,13 +5,18 @@
     {@content;}
 }
 
+@mixin tab-breakpoint {
+  @media screen and (max-width: map-get($breakpoints, tab))
+  {@content;}
+}
+
 @mixin text-gradient($dir, $from, $to) {
     background: linear-gradient($dir, $from, $to);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-//Mixin qui crée le trait à gauche et à droite des cat&gories à l'aide d'une image
+//Mixin qui crée le trait à gauche et à droite des catégories à l'aide d'une image
 @mixin menu-border($image) {
   border-top: 1rem solid transparent;
   border-image: url($image) 70 stretch; //Paramètres optimaux pour afficher correctement l'image en tant que bordure
@@ -20,7 +25,7 @@
   margin: 1rem; //Ne pas être collée au titre de catégorie
   }
 
-@mixin color-cat($color) {
-  color:$color;
-  &::after{border-bottom-color:$color;}
+@mixin color-cat($color1,$color2) {
+  color:$color1;
+  &::after{border-bottom-color:$color2;}
   }

@@ -30,7 +30,7 @@
         i {
             font-size: 2*$default-font-size;
             @include mobile-only {
-                font-size: 1.25*$default-font-size;
+                font-size: 1.5*$default-font-size;
             }
             margin-bottom: 0; //Pour être colée au titre du menu
 
@@ -45,6 +45,7 @@
             margin-top: 0; //Pour être colé à la note de musique
             margin-bottom: 0; //Identique à la note de musique pour bien centrer le texte du bas
         }
+        &.menu__main i { margin-top:30px;}
 
         //Police et taille spécifique au mot "MENU"
         h2:nth-child(3) {
@@ -179,23 +180,30 @@
 
     //Spécificités propres à la page d'accueil
     &__main {
-        height: 500px; //hauteur fixée pour être homogène entre tous les menus
-        //Largeur fixée à 35% de la page sur grand écran pour permettre l'affichage de 2 menus sur la largeur
-        width: 35%;
+        height: 250px; //hauteur fixée pour être homogène entre tous les menus
+        //Largeur fixée à 15% de la page sur grand écran pour permettre l'affichage des 4 menus sur la largeur
+        width: 15%;
+        //En mode tablette deux menus sur la largeur
+        @include tab-breakpoint {width:35%;
+        height:200px;}
         //En mobile un seul menu affiché sur la largeur
-        @include mobile-only {width: 90%;}
+        @include mobile-only {width: 60%;}
 
-        margin: 20px; //Pour que les menus ne soient pas collés les uns aux autres
-        padding: 4%; //Permet à l'animation zoom de ne pas sortir du cadre quelle que soit la résolution
+        margin: 10px; //Pour que les menus ne soient pas collés les uns aux autres
+        padding: 3.5%; //Permet à l'animation zoom de ne pas sortir du cadre quelle que soit la résolution
         @include mobile-only {padding: 10%;} //Plus de padding sur mobile car menu plus large aussi
 
         font-size: $default-font-size;
-        @include mobile-only {font-size: 0.7*$default-font-size;}
+        @include tab-breakpoint {font-size: 0.8*$default-font-size;}
+        &.menu__2 {font-size: 0.7*$default-font-size;
+            @include tab-breakpoint {font-size: 0.5*$default-font-size;}
+        }
+        
 
         //Animation sur le texte en cas de passage souris dans le bloc menu
         &:hover > .zoom {
             transform: scale(1.2);
-            opacity: 0.5;
+            opacity: 0.4;
         }
     }
 
@@ -206,7 +214,7 @@
         margin: auto; //Centrage page
         padding-top: 60px;
         padding-bottom: 60px;
-        margin-bottom: 10rem; //Afin de toujours avoir assez de marge pour afficher le footer 
+        margin-bottom: 5rem; //Afin de toujours avoir assez de marge pour afficher le footer 
         //(sur la page principale la marge est faite grâce au "btn" prochainement)
 
         //Mise en forme des tables incluant les plats et les prix dans les menus 1 à 4
@@ -230,34 +238,42 @@
 
         //Tailles des polices propres à chaque menu (car styles de police différentes)
         &.menu__1 {
-            font-size: 1.25*$default-font-size;
+            font-size: 1.15*$default-font-size;
+            @include tab-breakpoint {font-size: 0.8*$default-font-size;}
             @include mobile-only {font-size:0.625*$default-font-size;}
             h2 {
                 font-size: 2*$default-font-size;
+                @include tab-breakpoint {font-size: 1.5*$default-font-size;}
                 @include mobile-only {font-size:$default-font-size;}
             }
         }
         &.menu__2 {
             font-size: 0.7*$default-font-size;
+            @include tab-breakpoint {font-size: 0.5*$default-font-size;}
             @include mobile-only {font-size:0.35*$default-font-size;}
             h2 {
                 font-size: 1.2*$default-font-size;
+                @include tab-breakpoint {font-size: 0.9*$default-font-size;}
                 @include mobile-only {font-size:0.6*$default-font-size;}
             }
         }
         &.menu__3 {
             font-size: $default-font-size;
+            @include tab-breakpoint {font-size: 0.75*$default-font-size;}
             @include mobile-only {font-size:0.5*$default-font-size;}
             h2 {
                 font-size: 1.5*$default-font-size;
+                @include tab-breakpoint {font-size: 1.1*$default-font-size;}
                 @include mobile-only {font-size:0.75*$default-font-size;}
             }
         }
         &.menu__4 {
             font-size: 0.8*$default-font-size;
+            @include tab-breakpoint {font-size: 0.6*$default-font-size;}
             @include mobile-only {font-size:0.4*$default-font-size;}
             h2 {
                 font-size: 1.3*$default-font-size;
+                @include tab-breakpoint {font-size: $default-font-size;}
                 @include mobile-only {font-size:0.65*$default-font-size;}
             }
         }
@@ -292,10 +308,12 @@
     }
 
     //Mixin qui permet de changer la couleur des catégories et des traits de soulignement
-    &__1 {@include color-cat(map-get($colour-menu1, "font"));}
-    &__2-1 {@include color-cat(map-get($colour-menu2, "font-start"));}
-    &__2-2 {@include color-cat(map-get($colour-menu2, "font-middle"));}
-    &__2-3 {@include color-cat(map-get($colour-menu2, "font-end"));}
-    &__3,
-    &__4 {@include color-cat($colour-black);}
+    &__1 {@include color-cat(map-get($colour-menu1, "font"),map-get($colour-menu1, "font"));}
+    &__2-1 {@include color-cat(map-get($colour-menu2, "font-start"),map-get($colour-menu2, "font-start"));}
+    &__2-2 {@include color-cat(map-get($colour-menu2, "font-middle"),map-get($colour-menu2, "font-middle"));}
+    &__2-3 {@include color-cat(map-get($colour-menu2, "font-end"),map-get($colour-menu2, "font-end"));}
+    &__3-1 {@include color-cat($colour-black,map-get($colour-menu3, "font-start"));}
+    &__3-2 {@include color-cat($colour-black,map-get($colour-menu3, "font-middle"));}
+    &__3-3 {@include color-cat($colour-black,map-get($colour-menu3, "font-end"));}
+    &__4 {@include color-cat($colour-black,map-get($colour-menu4, "font-end"));}
 }

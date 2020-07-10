@@ -9,17 +9,17 @@ footer {
 //Centré en largeur et même taille max que le bloc page. Même hauteur et couleur que le header
 .footer {
     background: $colour-primary;
-    height: 6rem;
+    height: 3rem;
     margin:auto;
     max-width: 1920px;
 
     //Mentions légales et Contact
     &__logo {
-        font-size: $default-font-size;
-        @include mobile-only{font-size: 0.5*$default-font-size;}
+        font-size: 0.7*$default-font-size;
+        @include mobile-only{font-size: 0.4*$default-font-size;}
         font-family: 'Poppins-Regular', sans-serif;
         list-style-type: none; //Enlever puces liste
-        padding-top:20px;
+        padding-top:10px;
         padding-left:40px;
         padding-right:40px;
 
@@ -28,7 +28,7 @@ footer {
         justify-content: space-between;
 
         //Animation "Wizz"
-        animation: headshake 1000ms cubic-bezier(0.6, 0, 0.6, 1) 200ms infinite;
+        animation: headshake 5s cubic-bezier(0.6, 0, 0.6, 1) 2s infinite;
         
         //Suppression de la mise en forme des liens
         a {text-decoration: none;
@@ -37,15 +37,23 @@ footer {
 }
 
 @keyframes headshake {
-    10% {
+    2% {
         // entièrement à droite
         transform: translateX($shake-intensity);
     }
-    20% {
+    4% {
         // entièrement à gauche
         transform: translateX($shake-intensity * -1);
     }
-    30% {
+    6% {
+        // entièrement à droite
+        transform: translateX($shake-intensity);
+    }
+    8% {
+        // entièrement à gauche
+        transform: translateX($shake-intensity * -1);
+    }
+    10% {
         // reste en place au début un certain temps pour ne pas secouer en permanence
         transform: translateX($shake-intensity * 0);
     }
