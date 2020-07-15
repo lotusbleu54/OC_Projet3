@@ -70,43 +70,45 @@
         background-color: map-get($colour-menu2, "back");
         font-family: "CroissantOne", sans-serif;
 
-        //Gradient de couleur du haut vers le bas dans le menu...
-        @include text-gradient(to bottom, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-end"));
+        &__txt {
+            //Gradient de couleur du haut vers le bas dans le menu...
+            @include text-gradient(to bottom, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-end"));
 
-        //...sauf pour le titre pour lequel le gradient se fait de gauche à droite
-        h2:nth-child(1) {
+            //...sauf pour le titre pour lequel le gradient se fait de gauche à droite
+            h2:nth-child(1) {
             @include text-gradient(to right, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-end"));
-        }
+            }
 
-        //...et pour la mention "Menu" en page principale pour laquelle il n'y a qu'une couleur. 
-        //On utilise malgré tout la fonction gradient pour prendre la priorité sur le gradient vers le bas.
-        h2:nth-child(2) {
+            //...et pour la mention "Menu" en page principale pour laquelle il n'y a qu'une couleur. 
+            //On utilise malgré tout la fonction gradient pour prendre la priorité sur le gradient vers le bas.
+            h2:nth-child(2) {
             @include text-gradient(to right, map-get($colour-menu2, "font-start"), map-get($colour-menu2, "font-start"));
-        }
+            }
 
-        //Ajout des bordure avant et après les catégories
-        h3:nth-of-type(1)::before {
+            //Ajout des bordure avant et après les catégories
+            h3:nth-of-type(1)::before {
             @include menu-border(
                 "../../images/Menu2-1.png"
-            ); //Une image par catégorie car les couleurs sont différentes
-        }
-        h3:nth-of-type(1)::after {
+                ); //Une image par catégorie car les couleurs sont différentes
+            }
+            h3:nth-of-type(1)::after {
             @include menu-border("../../images/Menu2-1.png");
             transform: scaleX(-1); //On utilise la même image qu'on tourne de 180°
-        }
-        h3:nth-of-type(2)::before {
+            }
+            h3:nth-of-type(2)::before {
             @include menu-border("../../images/Menu2-2.png");
-        }
-        h3:nth-of-type(2)::after {
+            }
+            h3:nth-of-type(2)::after {
             @include menu-border("../../images/Menu2-2.png");
             transform: scaleX(-1);
-        }
-        h3:nth-of-type(3)::before {
+            }
+            h3:nth-of-type(3)::before {
             @include menu-border("../../images/Menu2-3.png");
-        }
-        h3:nth-of-type(3)::after {
+            }
+            h3:nth-of-type(3)::after {
             @include menu-border("../../images/Menu2-3.png");
             transform: scaleX(-1);
+            }
         }
     }
 
@@ -115,39 +117,41 @@
         background-color: map-get($colour-menu3, "back");
         font-family: "GreatVibes", sans-serif;
 
-        //Dégradé de couleur vers la droite sur les titres uniquement
-        h2:nth-child(1) {
-            @include text-gradient(to right, map-get($colour-menu3, "font-start"), map-get($colour-menu3, "font-end"));
-        }
+        &__txt {
+            //Dégradé de couleur vers la droite sur les titres uniquement
+            h2:nth-child(1) {
+                @include text-gradient(to right, map-get($colour-menu3, "font-start"), map-get($colour-menu3, "font-end"));
+            }
 
-        //Style spécifique au mot "Menu"
-        h2:nth-child(2) {
-            color:map-get($colour-menu3, "font-start");
-            font-family: "worstveld", sans-serif;
-            font-size: 1.5*$default-font-size;
-        }
+            //Style spécifique au mot "Menu"
+            h2:nth-child(2) {
+                color:map-get($colour-menu3, "font-start");
+                font-family: "worstveld", sans-serif;
+                font-size: 1.5*$default-font-size;
+            }
 
-        //Idem Menu2 : Une image par catégorie à cause des couleurs différentes.
-        h3:nth-of-type(1)::before {
-            @include menu-border("../../images/Menu3-1.png");
-        }
-        h3:nth-of-type(1)::after {
-            @include menu-border("../../images/Menu3-1.png");
-            transform: scaleX(-1);
-        }
-        h3:nth-of-type(2)::before {
-            @include menu-border("../../images/Menu3-2.png");
-        }
-        h3:nth-of-type(2)::after {
-            @include menu-border("../../images/Menu3-2.png");
-            transform: scaleX(-1);
-        }
-        h3:nth-of-type(3)::before {
-            @include menu-border("../../images/Menu3-3.png");
-        }
-        h3:nth-of-type(3)::after {
-            @include menu-border("../../images/Menu3-3.png");
-            transform: scaleX(-1);
+            //Idem Menu2 : Une image par catégorie à cause des couleurs différentes.
+            h3:nth-of-type(1)::before {
+                @include menu-border("../../images/Menu3-1.png");
+            }
+            h3:nth-of-type(1)::after {
+                @include menu-border("../../images/Menu3-1.png");
+                transform: scaleX(-1);
+            }
+            h3:nth-of-type(2)::before {
+                @include menu-border("../../images/Menu3-2.png");
+            }
+            h3:nth-of-type(2)::after {
+                @include menu-border("../../images/Menu3-2.png");
+                transform: scaleX(-1);
+            }
+            h3:nth-of-type(3)::before {
+                @include menu-border("../../images/Menu3-3.png");
+            }
+            h3:nth-of-type(3)::after {
+                @include menu-border("../../images/Menu3-3.png");
+                transform: scaleX(-1);
+            }
         }
     }
 
@@ -156,25 +160,27 @@
         background-color: map-get($colour-menu4, "back");
         font-family: "Kaushan", sans-serif;
 
-        //Dégradé de couleur sur les titres uniquement
-        h2:nth-child(1) {
-            @include text-gradient(to right, map-get($colour-menu4, "font-start"), map-get($colour-menu4, "font-end"));
-        }
+        &__txt{
+            //Dégradé de couleur sur les titres uniquement
+            h2:nth-child(1) {
+                @include text-gradient(to right, map-get($colour-menu4, "font-start"), map-get($colour-menu4, "font-end"));
+            }
 
-        //Style spécifique au mot "Menu"
-        h2:nth-child(2) {
-            color:map-get($colour-menu4, "font-start");
-            font-family: "worstveld", sans-serif;
-            font-size: 1.5*$default-font-size;
-        }
+            //Style spécifique au mot "Menu"
+            h2:nth-child(2) {
+                color:map-get($colour-menu4, "font-start");
+                font-family: "worstveld", sans-serif;
+                font-size: 1.5*$default-font-size;
+            }
 
-        //Image unique pour chaque catégorie
-        h3::before {
-            @include menu-border("../../images/Menu4.png");
-        }
-        h3::after {
-            @include menu-border("../../images/Menu4.png");
-            transform: scaleX(-1);
+            //Image unique pour chaque catégorie
+            h3::before {
+                @include menu-border("../../images/Menu4.png");
+            }
+            h3::after {
+                @include menu-border("../../images/Menu4.png");
+                transform: scaleX(-1);
+            }
         }
     }
 

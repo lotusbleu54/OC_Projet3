@@ -36,7 +36,7 @@ footer {
   padding-right: 40px;
   display: flex;
   justify-content: space-between;
-  animation: headshake 5s cubic-bezier(0.6, 0, 0.6, 1) 2s infinite;
+  animation: headshake 5s cubic-bezier(0.6, 0, 0.6, 1) 5s infinite;
 }
 @media screen and (max-width: 599px) {
   .footer__logo {
@@ -68,6 +68,7 @@ footer {
 .btn {
   display: inline-block;
   margin: 2rem auto 5rem;
+  padding-bottom: 0.5rem;
   background: #579C87;
   height: auto;
   width: auto;
@@ -174,30 +175,32 @@ footer {
   margin-right: 20px;
 }
 .menu__2 {
-  background-color: #fff5fe;
+  background-color: #FFF5FE;
   font-family: "CroissantOne", sans-serif;
+}
+.menu__2__txt {
   background: linear-gradient(to bottom, #d8852e, #8f5aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu__2 h2:nth-child(1) {
+.menu__2__txt h2:nth-child(1) {
   background: linear-gradient(to right, #d8852e, #8f5aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu__2 h2:nth-child(2) {
+.menu__2__txt h2:nth-child(2) {
   background: linear-gradient(to right, #d8852e, #d8852e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu__2 h3:nth-of-type(1)::before {
+.menu__2__txt h3:nth-of-type(1)::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu2-1.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__2 h3:nth-of-type(1)::after {
+.menu__2__txt h3:nth-of-type(1)::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu2-1.png") 70 stretch;
   content: "";
@@ -205,14 +208,14 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__2 h3:nth-of-type(2)::before {
+.menu__2__txt h3:nth-of-type(2)::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu2-2.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__2 h3:nth-of-type(2)::after {
+.menu__2__txt h3:nth-of-type(2)::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu2-2.png") 70 stretch;
   content: "";
@@ -220,14 +223,14 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__2 h3:nth-of-type(3)::before {
+.menu__2__txt h3:nth-of-type(3)::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu2-3.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__2 h3:nth-of-type(3)::after {
+.menu__2__txt h3:nth-of-type(3)::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu2-3.png") 70 stretch;
   content: "";
@@ -236,27 +239,27 @@ footer {
   transform: scaleX(-1);
 }
 .menu__3 {
-  background-color: #f9f9f9;
+  background-color: #EDEFEF;
   font-family: "GreatVibes", sans-serif;
 }
-.menu__3 h2:nth-child(1) {
+.menu__3__txt h2:nth-child(1) {
   background: linear-gradient(to right, #0431df, #0889fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu__3 h2:nth-child(2) {
+.menu__3__txt h2:nth-child(2) {
   color: #0431df;
   font-family: "worstveld", sans-serif;
   font-size: 2.55rem;
 }
-.menu__3 h3:nth-of-type(1)::before {
+.menu__3__txt h3:nth-of-type(1)::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu3-1.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__3 h3:nth-of-type(1)::after {
+.menu__3__txt h3:nth-of-type(1)::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu3-1.png") 70 stretch;
   content: "";
@@ -264,14 +267,14 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__3 h3:nth-of-type(2)::before {
+.menu__3__txt h3:nth-of-type(2)::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu3-2.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__3 h3:nth-of-type(2)::after {
+.menu__3__txt h3:nth-of-type(2)::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu3-2.png") 70 stretch;
   content: "";
@@ -279,14 +282,14 @@ footer {
   margin: 1rem;
   transform: scaleX(-1);
 }
-.menu__3 h3:nth-of-type(3)::before {
+.menu__3__txt h3:nth-of-type(3)::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu3-3.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__3 h3:nth-of-type(3)::after {
+.menu__3__txt h3:nth-of-type(3)::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu3-3.png") 70 stretch;
   content: "";
@@ -298,24 +301,24 @@ footer {
   background-color: #fdfffd;
   font-family: "Kaushan", sans-serif;
 }
-.menu__4 h2:nth-child(1) {
+.menu__4__txt h2:nth-child(1) {
   background: linear-gradient(to right, #3d9339, #beff7f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu__4 h2:nth-child(2) {
+.menu__4__txt h2:nth-child(2) {
   color: #3d9339;
   font-family: "worstveld", sans-serif;
   font-size: 2.55rem;
 }
-.menu__4 h3::before {
+.menu__4__txt h3::before {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu4.png") 70 stretch;
   content: "";
   flex: 1;
   margin: 1rem;
 }
-.menu__4 h3::after {
+.menu__4__txt h3::after {
   border-top: 1rem solid transparent;
   border-image: url("../../images/Menu4.png") 70 stretch;
   content: "";
@@ -599,7 +602,7 @@ html {
 body {
   max-width: 1920px;
   margin: auto;
-  background: #eee;
+  background: #fff;
   font-family: "Asimov", sans-serif;
   color: #000;
   overflow: scroll;

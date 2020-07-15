@@ -1,6 +1,7 @@
 .btn {
   display:inline-block; //bloc s'adapte taille contenu
   margin:2rem auto 5rem; //Assurer marge minimum en bas par rapport au footer, centrage horizontal
+  padding-bottom: 0.5rem; //Padding sous les points de suspension
   background: $colour-primary;
   height: auto;
   width: auto;
